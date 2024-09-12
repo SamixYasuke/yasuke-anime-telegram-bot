@@ -22,7 +22,7 @@ bot.on('message', (msg) => {
     const chatId = msg.chat.id;
     const userId = msg.from.id;
     const text = msg.text || 'No text content';
-    const username = msg.from.username || `${msg.from.first_name} ${msg.from.last_name}` || 'Unknown User';
+    const username = msg.from.username || `${msg.from.first_name || ""} ${msg.from.last_name || ""}` || 'Unknown User';
 
     // Log message to a file
     console.log(`User ID: ${userId}, User Name: ${username} Chat ID: ${chatId}, Message: ${text}\n`);
